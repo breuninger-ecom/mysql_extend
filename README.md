@@ -60,7 +60,7 @@ make install
   ```
 grant usage, replication client on *.* to monitor@'%' identified by 'somegoodpassword';
 FLUSH privileges;
-```
+  ```
 
 * create a .my.cnf in the zabbix-user's home:
 
@@ -69,11 +69,12 @@ FLUSH privileges;
 [mysql_extend]
 user = monitor
 password = somegoodpassword
-```
+  ```
 
 # Usage
 
 Configure items like this in zabbix:
+
 ```
 Description........: MySQL Com_alter_function
 Type...............: External check
@@ -85,6 +86,7 @@ Store value........: Delta (simple change)
 ```
 
 Call the tool with parameters like this:
+
 ```
 /usr/local/bin/mysql_extend -P 3306 -t 2 Binlog_cache_use foo.bar.de
 /usr/local/bin/mysql_extend --help
